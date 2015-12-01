@@ -13,9 +13,9 @@ class Onebox::Engine::SoundCloudOnebox
   def to_html
     oembed_data = get_oembed_data[:html]
     unless set?
-      oembed_data.gsub!('height="400"', 'height="166"')
+      oembed_data.gsub!('height="400"', 'height="166"') || oembed_data
     end
-    oembed_data.gsub!('visual=true', 'visual=false')
+    oembed_data.gsub!('visual=true', 'visual=false') || oembed_data
   end
 
   def placeholder_html
